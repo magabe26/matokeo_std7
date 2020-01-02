@@ -15,13 +15,13 @@ const links = [
   'http://localhost/primary/2019/shl_ps0101008-UPPER.htm'
 ];
 
-run_results_bloc_example1() async {
+void run_results_bloc_example1() async {
   //var url = 'https://onlinesys.necta.go.tz/results/2019/psle/results/shl_ps0201021.htm';
   // var url = links[4]; //lowerCase
   var url = links[5]; //upperCase
   //var url = links[1]; //with no grade performance summary
 
-  ResultsBloc bloc = ResultsBloc();
+  var bloc = ResultsBloc();
   bloc.listen((state) {
     // print(state);
     if (state is CouncilTitle) {
@@ -86,8 +86,8 @@ run_results_bloc_example1() async {
   }
 }
 
-run_results_bloc_example2() async {
-  ResultsBloc bloc = ResultsBloc();
+void run_results_bloc_example2() async {
+  var bloc = ResultsBloc();
   bloc.listen((state) {
     // print(state);
     if (state is CouncilTitle) {

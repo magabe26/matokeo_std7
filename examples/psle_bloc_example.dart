@@ -14,11 +14,11 @@ const links = [
   'http://localhost/primary/2017/psle/results/reg_19.htm'
 ];
 
-run_psle_bloc_example() async {
+void run_psle_bloc_example() async {
   //final url =  'https://onlinesys.necta.go.tz/results/2019/psle/psle.htm';
   final url = links[0];
 //final url = 'https://necta.go.tz/results/2017/psle/psle.htm';
-  PsleBloc psleBloc = PsleBloc();
+  var psleBloc = PsleBloc();
 
   psleBloc.listen((state) {
     print(state);

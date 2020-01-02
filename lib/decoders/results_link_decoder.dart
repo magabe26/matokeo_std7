@@ -25,7 +25,7 @@ class ResultsLinkDecoder extends Decoder<ResultLink> {
     final name = getElementText(tag: 'a', input: result);
     final href = getAttributeValue(tag: 'a', attribute: 'href', input: result);
     if (name.isNotEmpty && href.isNotEmpty) {
-      Map<String, dynamic> map = <String, dynamic>{};
+      var map = <String, dynamic>{};
       map['NAME'] = name;
       map['URL'] = (baseUrl != null) ? Urls.getFullUrl(baseUrl, href) : href;
       return ResultLink.fromJson(map);

@@ -34,7 +34,7 @@ class ResultsDecoder extends Decoder<Std7Result> {
 
       //Skipping the Header "tr"
       if ('SEX' != sex.toUpperCase()) {
-        Map<String, dynamic> map = <String, dynamic>{};
+        var map = <String, dynamic>{};
         map['CAND. NO'] = cNo;
         map['SEX'] = sex;
         map['CANDIDATE NAME'] = cName;

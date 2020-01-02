@@ -5,7 +5,7 @@
 
 import 'package:matokeo_std7/blocs/menu_bloc.dart';
 
-run_menu_bloc_example() async {
+void run_menu_bloc_example() async {
   var menuBloc = MenuBloc();
 
   menuBloc.listen((state) {

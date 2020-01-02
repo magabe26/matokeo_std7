@@ -14,12 +14,12 @@ const links = [
   'http://localhost/primary/2017/psle/results/reg_19.htm'
 ];
 
-run_district_bloc_example() async {
+void run_district_bloc_example() async {
   final url = links[2];
 
   //final url = 'https://necta.go.tz/results/2017/psle/results/reg_18.htm';
 
-  DistrictBloc districtBloc = DistrictBloc();
+  var districtBloc = DistrictBloc();
 
   districtBloc.listen((state) {
     print(state);

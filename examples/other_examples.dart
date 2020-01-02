@@ -70,11 +70,11 @@ void run_results_decoder_example() async {
   }
 }
 
-psle_links() => run_results_link_decoder_example(0);
-district_links() => run_results_link_decoder_example(2);
-region_links() => run_results_link_decoder_example(3);
+void psle_links() => run_results_link_decoder_example(0);
+void district_links() => run_results_link_decoder_example(2);
+void region_links() => run_results_link_decoder_example(3);
 
-run_result_meta_data_extractor_example() async {
+void run_result_meta_data_extractor_example() async {
   try {
     var xml = await getCleanedHtml(links[1], keepTags: const <String>[
       'a',
@@ -120,7 +120,7 @@ run_result_meta_data_extractor_example() async {
   }
 }
 
-run_PSLE_meta_data_extractor() async {
+void run_PSLE_meta_data_extractor() async {
   try {
     var xml = await getCleanedHtml(links[0], keepTags: const <String>[
       'a',
@@ -152,7 +152,7 @@ run_PSLE_meta_data_extractor() async {
   }
 }
 
-run_district_meta_data_extractor() async {
+void run_district_meta_data_extractor() async {
   try {
     var xml = await getCleanedHtml(links[2], keepTags: const <String>[
       'a',
@@ -187,7 +187,7 @@ run_district_meta_data_extractor() async {
   }
 }
 
-run_region_meta_data_extractor() async {
+void run_region_meta_data_extractor() async {
   try {
     var xml = await getCleanedHtml(links[3], keepTags: const <String>[
       'a',
@@ -222,7 +222,7 @@ run_region_meta_data_extractor() async {
   }
 }
 
-run_get_grade_performance_summary() async {
+void run_get_grade_performance_summary() async {
   try {
     var xml = await getCleanedHtml(
         'http://localhost/primary/2019/shl_ps0101008.htm',

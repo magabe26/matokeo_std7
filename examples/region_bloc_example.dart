@@ -14,10 +14,10 @@ const links = [
   'http://localhost/primary/2017/psle/results/reg_19.htm'
 ];
 
-run_region_bloc_example() async {
+void run_region_bloc_example() async {
   final url = links[3];
 
-  RegionBloc regionBloc = RegionBloc();
+  var regionBloc = RegionBloc();
   regionBloc.listen((state) {
     print(state);
     if (state is DistrictLink) {

@@ -83,6 +83,7 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
 
   Future<String> getSchool() {
     try {
+      // ignore: omit_local_variable_types
       final String school = getElementText(
           tag: schoolTag,
           input: getParserResult(
@@ -273,6 +274,7 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
         GradePerformanceSummaryContent maleGrade;
         GradePerformanceSummaryContent totalGrade;
 
+        // ignore: omit_local_variable_types
         int trIndex = 0;
         for (var gradeXml in trList) {
           var doc = xml.parse(gradeXml);
@@ -293,9 +295,10 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
             num gradeC = 0;
             num gradeD = 0;
             num gradeE = 0;
-            int identiferer = -1;
+            // ignore: omit_local_variable_types
+            int identifier = -1;
 
-            int getIdentiferer(String text) {
+            int getIdentifier(String text) {
               var txtUpperCase = text.toUpperCase();
               if ((txtUpperCase == 'WASICHANA') ||
                   (txtUpperCase == 'F') ||
@@ -313,6 +316,7 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
               }
             }
 
+            // ignore: omit_local_variable_types
             int tdIndex = 0;
             for (var td in tdElements) {
               final txt = td.text.trim();
@@ -325,7 +329,7 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
 
               switch (tdIndex) {
                 case 0:
-                  identiferer = getIdentiferer(txt);
+                  identifier = getIdentifier(txt);
                   break;
                 case 1:
                   gradeA = grade;
@@ -353,11 +357,11 @@ class ResultMetaDataExtractor extends MetaDataExtractor {
                 gradeD: gradeD,
                 gradeE: gradeE);
 
-            if (identiferer == 0) {
+            if (identifier == 0) {
               femaleGrade = gsc;
-            } else if (identiferer == 1) {
+            } else if (identifier == 1) {
               maleGrade = gsc;
-            } else if (identiferer == 2) {
+            } else if (identifier == 2) {
               totalGrade = gsc;
             }
           }
